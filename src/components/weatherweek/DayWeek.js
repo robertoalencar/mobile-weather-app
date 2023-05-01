@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, Text, View } from "react-native";
-import CurrentWeatherStyles from './CurrentWeatherStyles';
+import DayWeekStyles from './DayWeekStyles';
 
 export default (props) => {
 
@@ -38,9 +38,6 @@ export default (props) => {
             case "storm":
                 var img = require('../../../assets/storm.png');
                 break;
-            default:
-                var img = require('../../../assets/cloudly_day.png');
-                break;
         }
 
         return img;
@@ -48,15 +45,22 @@ export default (props) => {
 
     return (
 
-        <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+        <View style={DayWeekStyles.viewDayWeek}>
 
-            <Image source={getImage()} style={CurrentWeatherStyles.imagem} />
-            
-            <Text style={CurrentWeatherStyles.textoGrande}> {props.temp}º </Text>
-            <Text style={CurrentWeatherStyles.textoPequeno}> {props.description} </Text>
-            <Text style={CurrentWeatherStyles.textoPequeno}> Max: {props.max}º  Min: {props.min}º </Text>
+            <View style={{ flex: 1, flexDirection: "row", alignItems: "center" }}>
+                <Text style={{color: "#ffffff", fontWeight:"bold"}}>{props.day}</Text>
+            </View>
+
+            <View style={{ flex: 1, flexDirection: "row", alignItems: "center" }}>
+                <Image source={getImage()} style={DayWeekStyles.imagem} />
+            </View>
+
+            <View style={{ flex: 1, flexDirection: "row", alignItems: "center" }}>
+                <Text style={{color: "#ffffff"}}>{props.max}ºc{"   "}</Text>
+                <Text style={{color: "#C0C0C0"}}>{props.min}ºc</Text>
+            </View>
 
         </View>
-        
+
     );
 }
