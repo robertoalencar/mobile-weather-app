@@ -13,6 +13,12 @@ export default StyleSheet.create({
         marginBottom: 10
     },
 
+    itemDayWeek: {
+        flex: 1, 
+        flexDirection: "row", 
+        alignItems: "center" 
+    },
+
     imagem: {
         width: 40, 
         height: 40

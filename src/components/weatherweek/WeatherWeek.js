@@ -20,10 +20,8 @@ export default (props) => {
             </View>
 
             <View style={{flex:1, marginTop: 20}}>
-                {props.forecast.map((day, i) => (
-
-                        <DayWeek key={i} day={day.weekday} max={day.max} min={day.min} condition={day.condition} />
-
+                {props.forecast.slice(1, 10).map((day, i) => (
+                    <DayWeek key={i} day={day.weekday} max={day.max} min={day.min} condition={day.condition} />
                 ))}
             </View>
 

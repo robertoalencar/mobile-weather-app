@@ -17,7 +17,7 @@ export default StyleSheet.create({
         alignItems:'center',
     },
 
-    texto: {
+    textHeader: {
         fontSize: 20,
         padding: 5,
         paddingRight: 5,

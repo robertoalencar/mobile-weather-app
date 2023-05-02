@@ -11,7 +11,7 @@ export default (props) => {
 
             <View style={HeaderStyles.viewMap}>
                 <Ionicons name="location-outline" size={24} color="#ffffff" />
-                <Text style={HeaderStyles.texto}> {props.city} </Text>
+                <Text style={HeaderStyles.textHeader}> {props.city} </Text>
                 <AntDesign name="down" size={15}  color="#ffffff" />
             </View>
 

@@ -1,63 +1,55 @@
 import React from "react";
 import { Image, Text, View } from "react-native";
+import { getConditionWeatherImg } from '../../util/Util';
 import DayWeekStyles from './DayWeekStyles';
 
 export default (props) => {
 
-    function getImage () {
+    function getNameDay() {
 
-        switch (props.condition) {
+        switch (props.day) {
             
-            case "rain":
-                var img = require('../../../assets/rain.png');
+            case "Seg":
+                var nameDay = "Segunda";
                 break;
-            case "cloud":
-                var img = require('../../../assets/cloud.png');
+            case "Ter":
+                var nameDay = "Terça";
                 break;
-            case "clear_day":
-                var img = require('../../../assets/clear_day.png');
+            case "Qua":
+                var nameDay = "Quarta";
                 break;
-            case "clear_night":
-                var img = require('../../../assets/clear_night.png');
+            case "Qui":
+                var nameDay = "Quinta";
                 break;
-            case "cloudly_day":
-                var img = require('../../../assets/cloudly_day.png');
+            case "Sex":
+                var nameDay = "Sexta";
                 break;
-            case "cloudly_night":
-                var img = require('../../../assets/cloudly_night.png');
+            case "Sáb":
+                var nameDay = "Sábado";
                 break;
-            case "snow":
-                var img = require('../../../assets/snow.png');
-                break;
-            case "fog":
-                var img = require('../../../assets/fog.png');
-                break;
-            case "hail":
-                var img = require('../../../assets/hail.png');
-                break;
-            case "storm":
-                var img = require('../../../assets/storm.png');
+            case "Dom":
+                var nameDay = "Domingo";
                 break;
         }
 
-        return img;
+        return nameDay;
     }
 
     return (
 
         <View style={DayWeekStyles.viewDayWeek}>
 
-            <View style={{ flex: 1, flexDirection: "row", alignItems: "center" }}>
-                <Text style={{color: "#ffffff", fontWeight:"bold"}}>{props.day}</Text>
+            <View style={DayWeekStyles.itemDayWeek}>
+                <Text style={{color: "#ffffff", fontWeight:"bold", fontSize: 18}}>{getNameDay()}</Text>
             </View>
 
-            <View style={{ flex: 1, flexDirection: "row", alignItems: "center" }}>
-                <Image source={getImage()} style={DayWeekStyles.imagem} />
+            <View style={DayWeekStyles.itemDayWeek}>
+                <Image source={getConditionWeatherImg(props.condition)} style={DayWeekStyles.imagem} />
             </View>
 
-            <View style={{ flex: 1, flexDirection: "row", alignItems: "center" }}>
-                <Text style={{color: "#ffffff"}}>{props.max}ºc{"   "}</Text>
-                <Text style={{color: "#C0C0C0"}}>{props.min}ºc</Text>
+            <View style={DayWeekStyles.itemDayWeek}>
+                <Text style={{color: "#ffffff", fontSize: 16}}>{props.max}°C{"   "}</Text>
+                <Text style={{color: "#C0C0C0", fontSize: 16}}>{props.min}°C</Text>
             </View>
 
         </View>

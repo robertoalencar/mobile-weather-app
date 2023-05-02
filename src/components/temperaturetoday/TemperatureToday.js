@@ -1,5 +1,6 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
+import TemperatureHour from "./TemperatureHour";
 import TemperatureTodayStyles from './TemperatureTodayStyles';
 
 export default (props) => {
@@ -24,27 +25,27 @@ export default (props) => {
         if (mes == '01') {
             mesFormatado = 'Jan'
         } else if (mes == '02') {
-            mesFormatado = 'Feb'
+            mesFormatado = 'Fev'
         } else if (mes == '03') {
             mesFormatado = 'Mar'
         } else if (mes == '04') {
-            mesFormatado = 'Apr'
+            mesFormatado = 'Abr'
         } else if (mes == '05') {
-            mesFormatado = 'May'
+            mesFormatado = 'Mai'
         } else if (mes == '06') {
             mesFormatado = 'Jun'
         } else if (mes == '07') {
             mesFormatado = 'Jul'
         } else if (mes == '08') {
-            mesFormatado = 'Aug'
+            mesFormatado = 'Ago'
         } else if (mes == '09') {
-            mesFormatado = 'Sep'
+            mesFormatado = 'Set'
         } else if (mes == '10') {
-            mesFormatado = 'Oct'
+            mesFormatado = 'Out'
         } else if (mes == '11') {
             mesFormatado = 'Nov'
         } else if (mes == '12') {
-            mesFormatado = 'Dec'
+            mesFormatado = 'Dez'
         }
 
         return mesFormatado + ', ' + dia;
@@ -52,18 +53,23 @@ export default (props) => {
 
     return (
 
-        <>
+        <ScrollView style={[TemperatureTodayStyles.viewTemperature, {backgroundColor:getBackgroundColor()}]}>
 
-            <View style={[TemperatureTodayStyles.viewTemperature, {backgroundColor:getBackgroundColor()}]}>
+            <View style={{flex:1, flexDirection:"row"}}>
+                <Text style={[TemperatureTodayStyles.textViewTemperature, {fontWeight:"bold"}]}>Today</Text>
+                <Text style={TemperatureTodayStyles.textViewTemperature}>{getFormatedDate()}</Text>
+            </View>
 
-                <View style={{flex:1, flexDirection:"row"}}>
-                    <Text style={[TemperatureTodayStyles.textoViewTop, {fontWeight:"bold"}]}>Today</Text>
-                    <Text style={TemperatureTodayStyles.textoViewTop}>{getFormatedDate()}</Text>
-                </View>
+            <View style={TemperatureTodayStyles.viewTemperatureHour}>
+
+                <TemperatureHour temperature="29" condition="clear_day" hour="15:00" />
+                <TemperatureHour temperature="26" condition="cloud" hour="16:00" />
+                <TemperatureHour temperature="24" condition="cloud" hour="17:00" />
+                <TemperatureHour temperature="23" condition="clear_day" hour="18:00" />
 
             </View>
 
-        </>
-        
+        </ScrollView>
+
     );
 }

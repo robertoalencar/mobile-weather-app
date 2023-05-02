@@ -9,18 +9,27 @@ export default StyleSheet.create({
         padding: 15,
         textAlign:"center",
         alignContent:"center",
-        alignItems:"center",
         marginTop: 20,
         marginLeft:20,
         marginRight:20,
     },
 
-    textoViewTop: {
+    textViewTemperature: {
         fontSize: 18,
-        paddingRight:190,
+        paddingRight:200,
         paddingLeft:10,
         color:'#ffffff',
         justifyContent: 'flex-start'
+    },
+
+    viewTemperatureHour: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        marginTop: 20,
+        width: 335,
+        paddingRight:10,
+        paddingLeft:10,
+        paddingRight:1,
     },
 
 })

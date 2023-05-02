@@ -2,7 +2,7 @@ import React from "react";
 import { Text, View } from "react-native";
 import FooterStyles from "./FooterStyles";
 
-export default (props) => {
+export default () => {
 
     return (
 
