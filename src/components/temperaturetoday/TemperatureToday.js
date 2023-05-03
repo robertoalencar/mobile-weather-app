@@ -62,10 +62,10 @@ export default (props) => {
 
             <View style={TemperatureTodayStyles.viewTemperatureHour}>
 
-                <TemperatureHour temperature="29" condition="clear_day" hour="15:00" />
-                <TemperatureHour temperature="26" condition="cloud" hour="16:00" />
-                <TemperatureHour temperature="24" condition="cloud" hour="17:00" />
-                <TemperatureHour temperature="23" condition="clear_day" hour="18:00" />
+                <TemperatureHour temperature="29" condition="clear_day" hour="15:00" selected={false} />
+                <TemperatureHour temperature="26" condition="cloud" hour="16:00" selected={false} />
+                <TemperatureHour temperature="24" condition="cloud" hour="17:00" selected={true} />
+                <TemperatureHour temperature="23" condition="clear_day" hour="18:00" selected={false} />
 
             </View>
 

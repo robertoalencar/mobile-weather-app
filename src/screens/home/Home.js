@@ -19,8 +19,7 @@ export default function Home () {
 
     useEffect(()=> {
     
-        setLoading(true)
-        loadWeather('São Paulo')
+        loadWeather('Sao Paulo')
         LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
 
     }, []);
@@ -28,6 +27,7 @@ export default function Home () {
     loadWeather = (newCity) => {
 
         setCity(newCity)
+        setLoading(true)
 
         getWeather(newCity).then((response) => {
             setWeather(response)
@@ -42,7 +42,6 @@ export default function Home () {
 
     function changeCity(newCity) {
         
-        setLoading(true)
         loadWeather(newCity)
     }
 
@@ -52,7 +51,7 @@ export default function Home () {
 
             <LinearGradient
                 colors={
-                    weather?.currently === "noite"
+                    weather.currently === "noite"
                         ? ["#08244F", "#134CB5", "#0B42AB"]
                         : ["#29B2DD", "#29B2DD", "#2DC8EA"]
                 }
@@ -73,26 +72,26 @@ export default function Home () {
                     <Header city={city} changeCity={changeCity} />
 
                     <WeatherToday
-                        condition={today?.condition}
-                        temp={weather?.temp}
-                        description={weather?.description}
-                        max={today?.max}
-                        min={today?.min}
-                        currently={weather?.currently}
-                        humidity={weather?.humidity}
-                        rain_probability={today?.rain_probability}
-                        wind_speedy={weather?.wind_speedy}
+                        condition={today.condition}
+                        temp={weather.temp}
+                        description={weather.description}
+                        max={today.max}
+                        min={today.min}
+                        currently={weather.currently}
+                        humidity={weather.humidity}
+                        rain_probability={today.rain_probability}
+                        wind_speedy={weather.wind_speedy}
                     />
 
                     <TemperatureToday
-                        currently={weather?.currently}
-                        day={today?.date}
-                        sunrise={weather?.sunrise}
-                        sunset={weather?.sunset}
+                        currently={weather.currently}
+                        day={today.date}
+                        sunrise={weather.sunrise}
+                        sunset={weather.sunset}
                     />
 
                     <WeatherWeek
-                        currently={weather?.currently}
+                        currently={weather.currently}
                         forecast={forecast}
                     />
 

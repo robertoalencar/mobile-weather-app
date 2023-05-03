@@ -19,7 +19,7 @@ export default StyleSheet.create({
         flexDirection:"row"
     },
 
-    textoViewTop: {
+    textViewTop: {
         fontSize: 18,
         paddingRight:190,
         paddingLeft:10,

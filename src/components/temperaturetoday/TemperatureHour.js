@@ -5,9 +5,18 @@ import TemperatureHourStyles from "./TemperatureHourStyles";
 
 export default (props) => {
 
+    function getStyle() {
+
+        if (props.selected) {
+            return TemperatureHourStyles.viewItemHourSelected
+        } else {
+            return TemperatureHourStyles.viewItemHour
+        }
+    }
+
     return (
 
-        <View style={TemperatureHourStyles.viewItemHour}>
+        <View style={getStyle()}>
 
             <Text style={TemperatureHourStyles.textItemHour}>{props.temperature}°C</Text>
             <Image style={TemperatureHourStyles.image} source={getConditionWeatherImg(props.condition)} />

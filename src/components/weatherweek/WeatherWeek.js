@@ -7,6 +7,7 @@ import WeatherWeekStyles from './WeatherWeekStyles';
 export default (props) => {
 
     function getBackgroundColor() {
+        
         return (props.currently === "noite") ? "#104084" : "#0490BC"
     }
 
@@ -15,7 +16,7 @@ export default (props) => {
         <ScrollView style={[WeatherWeekStyles.viewWeatherWeek, {backgroundColor:getBackgroundColor()}]}>
 
             <View style={WeatherWeekStyles.viewTop}>
-                <Text style={[WeatherWeekStyles.textoViewTop, {fontWeight:"bold"}]}>Next Forecast</Text>
+                <Text style={[WeatherWeekStyles.textViewTop, {fontWeight:"bold"}]}>Next Forecast</Text>
                 <Entypo name="calendar" size={24} color="#ffffff" />
             </View>
 

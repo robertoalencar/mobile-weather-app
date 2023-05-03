@@ -3,7 +3,17 @@ import { StyleSheet } from 'react-native'
 export default StyleSheet.create({
 
     viewItemHour: {
-        alignItems: "center",
+        alignItems: 'center',
+        borderColor: '#ffffff',
+        width: 70,
+    },
+
+    viewItemHourSelected: {
+        alignItems: 'center',
+        borderColor: '#00BFFF',
+        width: 70,
+        borderWidth: 1,
+        borderRadius: 20,
     },
 
     textItemHour: {

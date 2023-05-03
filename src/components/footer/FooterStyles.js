@@ -12,7 +12,7 @@ export default StyleSheet.create({
         backgroundColor: "transparent"
     },
 
-    textoViewFooter: {
+    textViewFooter: {
         color:"#ffffff",
         fontSize: 12,
         textAlign:"center"

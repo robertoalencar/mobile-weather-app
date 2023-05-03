@@ -2,6 +2,7 @@ import { Picker } from '@react-native-picker/picker';
 import React from "react";
 import { View } from "react-native";
 import { cities } from '../../util/Util';
+import PickerCityStyles from './PickerCityStyles';
 
 export default (props) => {
 
@@ -12,12 +13,7 @@ export default (props) => {
             <Picker
                 selectedValue={props.city}
                 onValueChange={ (valor) => props.changeCity(valor) }
-                style={{ 
-                    color: "white", 
-                    fontSize: 16, 
-                    fontWeight: "bold", 
-                }}
-                
+                style={ PickerCityStyles.picker }
             >
 
                 {cities.map((c) => (

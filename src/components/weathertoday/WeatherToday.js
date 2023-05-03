@@ -18,7 +18,6 @@ export default (props) => {
             <View style={WeatherTodayStyles.viewTop}>
 
                 <Image source={getConditionWeatherImg(props.condition)} style={WeatherTodayStyles.imagem} />
-                
                 <Text style={WeatherTodayStyles.textoGrande}> {props.temp}º </Text>
                 <Text style={WeatherTodayStyles.textoPequeno}> {props.description} </Text>
                 <Text style={WeatherTodayStyles.textoPequeno}> Max.: {props.max}º  Min.: {props.min}º </Text>

@@ -8,7 +8,7 @@ export default () => {
 
         <View style={FooterStyles.viewFooter}>
 
-            <Text style={FooterStyles.textoViewFooter}> Weather App - Desenvolvido por Roberto Alencar </Text>
+            <Text style={FooterStyles.textViewFooter}> Weather App - Desenvolvido por Roberto Alencar </Text>
 
         </View >
         
