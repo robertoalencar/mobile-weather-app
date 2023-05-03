@@ -1,6 +1,6 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, LogBox, ScrollView, Text, View } from "react-native";
+import { ActivityIndicator, LogBox, ScrollView, StatusBar, Text, View } from "react-native";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import TemperatureToday from '../../components/temperaturetoday/TemperatureToday';
@@ -41,68 +41,82 @@ export default function Home () {
     }
 
     function changeCity(newCity) {
-        
         loadWeather(newCity)
+    }
+
+    function getStatusBarColor() {
+        
+        if (weather?.currently === "noite") {
+            return"#08244F"
+        } else {
+            return"#29B2DD"
+        }
     }
 
     return (
 
-        <ScrollView style={HomeStyles.home}>
+        <>
 
-            <LinearGradient
-                colors={
-                    weather.currently === "noite"
-                        ? ["#08244F", "#134CB5", "#0B42AB"]
-                        : ["#29B2DD", "#29B2DD", "#2DC8EA"]
-                }
-            >
+            <StatusBar backgroundColor={getStatusBarColor()} barStyle="light-content" />
 
-                { loading &&
+            <ScrollView style={HomeStyles.home}>
 
-                    <View style={ HomeStyles.viewLoading }>
-                        <Text style={ HomeStyles.textLoading }>Carregando</Text>
-                        <ActivityIndicator style={{ marginBottom: 200 }} size="large" color="#ffffff" />
-                    </View>
+                <LinearGradient
+                    colors={
+                        weather?.currently === "noite"
+                            ? ["#08244F", "#134CB5", "#0B42AB"]
+                            : ["#29B2DD", "#29B2DD", "#2DC8EA"]
+                    }
+                >
 
-                }
+                    { loading &&
 
-                { !loading &&
-                <>
+                        <View style={ HomeStyles.viewLoading }>
+                            <Text style={ HomeStyles.textLoading }>Carregando</Text>
+                            <ActivityIndicator style={{ marginBottom: 200 }} size="large" color="#ffffff" />
+                        </View>
 
-                    <Header city={city} changeCity={changeCity} />
+                    }
 
-                    <WeatherToday
-                        condition={today.condition}
-                        temp={weather.temp}
-                        description={weather.description}
-                        max={today.max}
-                        min={today.min}
-                        currently={weather.currently}
-                        humidity={weather.humidity}
-                        rain_probability={today.rain_probability}
-                        wind_speedy={weather.wind_speedy}
-                    />
+                    { !loading &&
+                    <>
 
-                    <TemperatureToday
-                        currently={weather.currently}
-                        day={today.date}
-                        sunrise={weather.sunrise}
-                        sunset={weather.sunset}
-                    />
+                        <Header city={city} changeCity={changeCity} />
 
-                    <WeatherWeek
-                        currently={weather.currently}
-                        forecast={forecast}
-                    />
+                        <WeatherToday
+                            condition={today?.condition}
+                            temp={weather?.temp}
+                            description={weather?.description}
+                            max={today?.max}
+                            min={today?.min}
+                            currently={weather?.currently}
+                            humidity={weather?.humidity}
+                            rain_probability={today?.rain_probability}
+                            wind_speedy={weather?.wind_speedy}
+                        />
 
-                    <Footer />
+                        <TemperatureToday
+                            currently={weather?.currently}
+                            day={today?.date}
+                            sunrise={weather?.sunrise}
+                            sunset={weather?.sunset}
+                        />
 
-                </>
-                }
-            
-            </LinearGradient>
+                        <WeatherWeek
+                            currently={weather?.currently}
+                            forecast={forecast}
+                        />
 
-        </ScrollView>
+                        <Footer />
+
+                    </>
+                    }
+                
+                </LinearGradient>
+
+            </ScrollView>
+
+        </>
 
     );
 }
