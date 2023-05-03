@@ -1,9 +1,12 @@
-import { AntDesign, Ionicons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 import React from "react";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import HeaderStyles from "./HeaderStyles";
+import PickerCity from "./PickerCity";
 
 export default (props) => {
+
+    const [city, changeCity] = [props.city, props.changeCity];
 
     return (
 
@@ -11,10 +14,9 @@ export default (props) => {
 
             <View style={HeaderStyles.viewMap}>
                 <Ionicons name="location-outline" size={24} color="#ffffff" />
-                <Text style={HeaderStyles.textHeader}> {props.city} </Text>
-                <AntDesign name="down" size={15}  color="#ffffff" />
+                <PickerCity city={city} changeCity={changeCity} />
             </View>
-
+            
             <Ionicons name="notifications-outline" size={24} color="#ffffff" />
 
         </View >

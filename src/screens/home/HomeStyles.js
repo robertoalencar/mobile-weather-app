@@ -3,15 +3,21 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
 
     home: {
-        flexGrow: 1,
+        flexGrow: 1
     },
-    
-    backgroundClaro: {
-        backgroundColor: '#47BBE1'
+
+    viewLoading: {
+        flexGrow:1, 
+        flexDirection: 'column', 
+        alignItems: 'center', 
+        justifyContent: 'center'
     },
-    
-    backgroundEscuro: {
-        backgroundColor: '#134CB5'
-    }
+
+    textLoading: {
+        fontSize: 20, 
+        color: "#ffffff", 
+        marginTop:200, 
+        marginBottom: 50
+    },
 
 })
