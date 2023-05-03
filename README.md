@@ -49,4 +49,6 @@ $ npx expo start
     <img width="350" alt="image" src="images/Screen04.jpg">
     <img width="350" alt="image" src="images/Screen05.jpg">
     <img width="350" alt="image" src="images/Screen06.jpg">
+    <img width="350" alt="image" src="images/Screen07.jpg">
+    <img width="350" alt="image" src="images/Screen08.jpg">
 </p>

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { ActivityIndicator, LogBox, ScrollView, StatusBar, Text, View } from "react-native";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
+import SunsetSunrise from '../../components/sunsetsunrise/SunsetSunRise';
 import TemperatureToday from '../../components/temperaturetoday/TemperatureToday';
 import WeatherToday from '../../components/weathertoday/WeatherToday';
 import WeatherWeek from '../../components/weatherweek/WeatherWeek';
@@ -105,6 +106,12 @@ export default function Home () {
                         <WeatherWeek
                             currently={weather?.currently}
                             forecast={forecast}
+                        />
+
+                        <SunsetSunrise
+                            currently={weather?.currently} 
+                            sunrise={weather?.sunrise}
+                            sunset={weather?.sunset}
                         />
 
                         <Footer />
