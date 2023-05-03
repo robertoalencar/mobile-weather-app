@@ -1,6 +1,4 @@
-##
-# NEES - Seleção Dev. Mobile :: Projeto para Previsão do Tempo - Roberto Alencar
-##
+# NEES - Seleção Dev. Mobile
 ## Projeto para Previsão do Tempo - Roberto Alencar
 
 Este projeto tem como objetivo o desenvolvimento de um App Mobile compatível com Android e IOS para exibir a previsão do tempo das capitais do Brasil. Os dados exibidos são da [HG BRASIL](https://hgbrasil.com) através da api [HG Weather](https://hgbrasil.com/status/weather).
@@ -44,6 +42,10 @@ $ npx expo start
 ### Screenshot do App:
 
 <p align="center">
-
-
+    <img width="350" alt="image" src="images/Screen01.jpg">
+    <img width="350" alt="image" src="images/Screen02.jpg">
+    <img width="350" alt="image" src="images/Screen03.jpg">
+    <img width="350" alt="image" src="images/Screen04.jpg">
+    <img width="350" alt="image" src="images/Screen05.jpg">
+    <img width="350" alt="image" src="images/Screen06.jpg">
 </p>
